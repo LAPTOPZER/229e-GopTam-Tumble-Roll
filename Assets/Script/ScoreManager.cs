@@ -13,6 +13,8 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text winText;
     public GameObject winPanel;
     public GameObject creditPanel;
+    public GameObject backPanel;
+    public GameObject uiPanel;
 
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class ScoreManager : MonoBehaviour
         }
         winPanel.SetActive(false);
         creditPanel.SetActive(false);
+        backPanel.SetActive(false);
     }
 
     public void AddScore(int value)
@@ -32,6 +35,7 @@ public class ScoreManager : MonoBehaviour
         if (score == 3)
         {
             ShowWinScreen();
+            Time.timeScale = 0;
         }
     }
 
@@ -40,6 +44,9 @@ public class ScoreManager : MonoBehaviour
         winText.text = "You Win!!";
         winPanel.SetActive(true);
         creditPanel.SetActive(true);
+        backPanel.SetActive(true);
+
+        uiPanel.SetActive(false);
     }
 
     private void UpdateScoreUI()
