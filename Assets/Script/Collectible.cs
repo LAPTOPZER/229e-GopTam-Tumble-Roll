@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class Collectible : MonoBehaviour
 {
-    public int scoreValue = 10; // ค่าคะแนนที่ได้จากการเก็บ
+    public int scoreValue = 1;
     public float rotationSpeed = 30f;
 
     private void Update()
     {
-        transform.Rotate(0, 0 , rotationSpeed * Time.deltaTime);
+        transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
     }
     private void OnTriggerEnter(Collider other)
     {
