@@ -27,17 +27,11 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float verticalInput = Input.GetAxis("Vertical");
-        //float horizontalInput = Input.GetAxis("Horizontal");
 
         Vector3 forward = cameraTransform.forward;
         forward.y = 0;
         forward.Normalize();
 
-        //Vector3 right = cameraTransform.right;
-        //right.y = 0;
-        //right.Normalize();
-
-        //Vector3 moveDirection = (forward * verticalInput + right * horizontalInput).normalized;
         Vector3 moveDirection = (forward * verticalInput).normalized;
 
         rb.AddForce(moveDirection * moveSpeed, ForceMode.Acceleration);

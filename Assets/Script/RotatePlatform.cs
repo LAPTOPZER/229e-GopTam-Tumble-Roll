@@ -3,9 +3,16 @@ using UnityEngine;
 public class RotatePlatform : MonoBehaviour
 {
     public float rotationSpeed = 30f;
+    private Rigidbody rb;
 
-    void Update()
+    void Start()
     {
-        transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        float targetAngularVelocity = rotationSpeed * Mathf.Deg2Rad;
+        rb.angularVelocity = new Vector3(0, targetAngularVelocity, 0);
     }
 }
