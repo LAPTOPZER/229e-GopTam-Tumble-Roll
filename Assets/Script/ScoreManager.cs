@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public int score = 0;
-    public Text scoreText;
+    public TMP_Text scoreText;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + score;
+            scoreText.text = $"Score: {score}";
         }
     }
 }

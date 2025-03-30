@@ -16,11 +16,9 @@ public class Collectible : MonoBehaviour
         {
             Debug.Log("? Collected! + " + scoreValue + " points");
 
-            // เพิ่มคะแนน
-            //ScoreManager.instance.AddScore(scoreValue);
-
-            // ทำลายวัตถุเมื่อถูกเก็บ
-            Destroy(gameObject);
+            ScoreManager.instance.AddScore(scoreValue);
+            Destroy(this.gameObject);
         }
     }
+
 }
